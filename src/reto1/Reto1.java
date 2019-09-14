@@ -25,7 +25,8 @@ public class Reto1 {
      * @param args the command line arguments
      */
      String txtauxiliar;
-   
+    ArrayList<String> lineasTextoIn =new ArrayList<String>();
+    
     public static void main(String[] args) throws IOException  {
         // TODO code application logic here
      int valormedio;
@@ -108,8 +109,51 @@ public class Reto1 {
     }
     if (intReto==2)
     {
-        String txtview= Inicio.introducirTexto();
-        System.out.println(txtview);
+        ArrayList<String> textoIn=new ArrayList<>();
+        ArrayList<String> textoOn=new ArrayList<>();
+        Hashtable<Integer,Integer> intSpace=new Hashtable<Integer,Integer>();
+        int mayorCatidadChar=0;
+        int contLinea=0;
+        textoIn=Inicio.introducirTexto();
+        System.out.println("Jutificar Texto : ");
+        for (String line :  textoIn) {
+            contLinea=contLinea+1;
+                     
+            if (mayorCatidadChar<line.length())
+                mayorCatidadChar=line.length();
+            int contarspace=0;
+            for (int n=0; n <line.length(); n++)
+            {     
+                  if(line.charAt(n)==' ')
+                  {
+                      contarspace=contarspace+1;
+                  }
+            }
+            intSpace.put(contLinea,contarspace);
+        }
+        int contarLine2=0;
+         for (String line :  textoIn) {
+            contarLine2=contarLine2+1;
+            // if(intSpace.get(contarLine2)){} 
+             if (line.length()<mayorCatidadChar) {
+                  int difresta=mayorCatidadChar-line.length();
+                  if (difresta>intSpace.get(contarLine2))
+                  {
+                     textoOn.add(Inicio.Calcularspace(line,difresta,1));
+                  }
+                  else
+                  {
+                    textoOn.add(Inicio.Calcularspace(line,difresta,2)); 
+                  }
+             }
+             else
+             {
+                   textoOn.add(line); 
+             }
+        }
+        for (String result : textoOn) {
+        System.out.println(result);
+        }
         Inicio.main(args);
     } 
    
@@ -158,12 +202,29 @@ public class Reto1 {
         }
         return 0;
  }
- public String introducirTexto() throws IOException 
+ public ArrayList<String> introducirTexto() throws IOException 
  {
-        Scanner teclado = new Scanner (System.in);
-        System.out.println("Introducir Texto: ");
-        txtauxiliar=teclado.nextLine();      
-         return txtauxiliar;
+    Scanner scanner = new Scanner (System.in);
+    System.out.println("Introducir Texto: "); 
+    String leerTexto = scanner.nextLine();
+    lineasTextoIn.add(leerTexto);
+    while(leerTexto!=null) {
+        //System.out.println(leerTexto);
+
+        if (leerTexto.isEmpty()) {
+            System.out.println("Read Enter Key.");
+            System.out.println("---------------------------------------------");
+                 return lineasTextoIn;
+        }
+
+        if (scanner.hasNextLine()) {
+            leerTexto = scanner.nextLine();
+            lineasTextoIn.add(leerTexto);
+        } else {
+            leerTexto = null;
+        }
+    }
+    return  null;
  }
  public int introducirReto()
  {
@@ -189,4 +250,65 @@ public class Reto1 {
         }
         return 0;
  }
+ //dife 1 si la diferencia es mayor a los epacios en blanco
+ //dife 2 si la diferencia es maenor a los epacios en blanco
+ public String Calcularspace(String line,int space,int dife)
+    {
+        if(dife==1){
+        int spaceTemp =space;
+                StringBuilder sb = new StringBuilder(line);
+                          for (int i = 0; i <line.length(); i++) {
+                              if (space==0)
+                              {
+                                  return sb.toString();
+                              }
+                              if(space==spaceTemp)
+                              {
+                                if(line.charAt(i)==' ')
+                                {
+                                  sb.replace(i, i, "piratasss");
+                                  space=space-1;  
+                                }
+                              }
+                              else
+                              {
+                                if(line.charAt(i)==' ')
+                                {
+                                  sb.replace(i+1, i+1, "  ");
+                                  space=space-1;  
+                                }
+                              }
+                             
+                          }
+        }
+        if(dife==2)
+        {
+         int spaceTemp =space;
+                StringBuilder sb = new StringBuilder(line);
+                          for (int i = 0; i <line.length(); i++) {
+                              if (space==0)
+                              {
+                                  return sb.toString();
+                              }
+                              if(space==spaceTemp)
+                              {
+                                if(line.charAt(i)==' ')
+                                {
+                                  sb.replace(i, i+1, "  ");
+                                  space=space-1;  
+                                }
+                              }
+                              else
+                              {
+                                if(line.charAt(i)==' ')
+                                {
+                                  sb.replace(i+1, i+1, "  ");
+                                  space=space-1;  
+                                }
+                              }
+                             
+                          }
+        }
+         return line;
+    }
 }
