@@ -34,6 +34,6 @@ Read Enter Key.
 ---------------------------------------------
 Jutificar Texto : 
 A veces pocas personas logran entender que tanto hacemos con cara de frustraci�n
-frente   a un ordenador, a veces estamos divagando en algoritmos otras ocasiones
-usando  MSN , Kopet e, G a im . . . pero en raras veces dedicamos tiempo al amor
+frente   a  un ordenador, a veces estamos divagando en algoritmos otras ocasiones
+usando  MSN  , Kopet e, G a im . . . pero en raras veces dedicamos tiempo al amor
 inform�tico
