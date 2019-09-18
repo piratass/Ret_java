@@ -20,21 +20,20 @@ valor medio : 3
 7655567
 7666667
 7777777
-
 =============================================
 Introducir Reto(solo hay opcion 1 y 2 ): 
 =============================================
 2
 Introducir Texto: 
-aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaa
-aaaaaaaaaaaaaaaaaaa a aaaaaaaaaaaaaaaaaaaaa aaaa
+A veces pocas personas logran entender que tanto hacemos con cara de frustración
+frente a un ordenador, a veces estamos divagando en algoritmos otras ocasiones
+usando MSN, Kopete, Gaim . . . pero en raras veces dedicamos tiempo al amor
+informático
 
 Read Enter Key.
 ---------------------------------------------
 Jutificar Texto : 
-aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaa  aaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaa
-aaaaaaaaaaaaaaaaaaa  a aaaaaaaaaaaaaaaaaaaaa aaaa
+A veces pocas personas logran entender que tanto hacemos con cara de frustraci�n
+frente   a un ordenador, a veces estamos divagando en algoritmos otras ocasiones
+usando  MSN , Kopet e, G a im . . . pero en raras veces dedicamos tiempo al amor
+inform�tico
