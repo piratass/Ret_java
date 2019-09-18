@@ -129,18 +129,16 @@ public class Reto1 {
                       contarspace=contarspace+1;
                   }
             }
-            System.out.println(contLinea +"   "+contarspace);
             intSpace.put(contLinea,contarspace);
         }
         
         int contarLine2=0;
          for (String line :  textoIn) {
-             System.out.println(mayorCatidadChar);
-            contarLine2=contarLine2+1;
+             contarLine2=contarLine2+1;
             // if(intSpace.get(contarLine2)){} 
              if (line.length()<mayorCatidadChar) {
                   int difresta=mayorCatidadChar-line.length();
-                  System.out.println("linea "+contarLine2 +"  diferencia:"+difresta+"  catidad de espacios"+intSpace.get(contarLine2));
+                 // System.out.println("linea "+contarLine2 +"  diferencia:"+difresta+"  catidad de espacios"+intSpace.get(contarLine2));
                      
                   if (difresta<=intSpace.get(contarLine2))
                   {
