@@ -129,21 +129,26 @@ public class Reto1 {
                       contarspace=contarspace+1;
                   }
             }
+            System.out.println(contLinea +"   "+contarspace);
             intSpace.put(contLinea,contarspace);
         }
+        
         int contarLine2=0;
          for (String line :  textoIn) {
+             System.out.println(mayorCatidadChar);
             contarLine2=contarLine2+1;
             // if(intSpace.get(contarLine2)){} 
              if (line.length()<mayorCatidadChar) {
                   int difresta=mayorCatidadChar-line.length();
-                  if (difresta>intSpace.get(contarLine2))
+                  System.out.println("linea "+contarLine2 +"  diferencia:"+difresta+"  catidad de espacios"+intSpace.get(contarLine2));
+                     
+                  if (difresta<=intSpace.get(contarLine2))
                   {
-                     textoOn.add(Inicio.Calcularspace(line,difresta,1));
+                     textoOn.add(Inicio.Calcularspace(line,difresta));
                   }
                   else
                   {
-                    textoOn.add(Inicio.Calcularspace(line,difresta,2)); 
+                    textoOn.add(line); 
                   }
              }
              else
@@ -252,63 +257,24 @@ public class Reto1 {
  }
  //dife 1 si la diferencia es mayor a los epacios en blanco
  //dife 2 si la diferencia es maenor a los epacios en blanco
- public String Calcularspace(String line,int space,int dife)
+ public String Calcularspace(String line,int difspace)
     {
-        if(dife==1){
-        int spaceTemp =space;
-                StringBuilder sb = new StringBuilder(line);
+                StringBuilder sb = new StringBuilder(line); 
+                int contadorspaciotexto =0;
+                if(difspace!=0){
                           for (int i = 0; i <line.length(); i++) {
-                              if (space==0)
-                              {
-                                  return sb.toString();
-                              }
-                              if(space==spaceTemp)
-                              {
+                                                        
                                 if(line.charAt(i)==' ')
                                 {
-                                  sb.replace(i, i, "piratasss");
-                                  space=space-1;  
+                                    contadorspaciotexto=contadorspaciotexto+1;
+                                    if(contadorspaciotexto<=difspace)
+                                        sb.replace(i, i, " ");
+                                    else
+                                    break;
                                 }
-                              }
-                              else
-                              {
-                                if(line.charAt(i)==' ')
-                                {
-                                  sb.replace(i+1, i+1, "  ");
-                                  space=space-1;  
-                                }
-                              }
-                             
-                          }
-        }
-        if(dife==2)
-        {
-         int spaceTemp =space;
-                StringBuilder sb = new StringBuilder(line);
-                          for (int i = 0; i <line.length(); i++) {
-                              if (space==0)
-                              {
-                                  return sb.toString();
-                              }
-                              if(space==spaceTemp)
-                              {
-                                if(line.charAt(i)==' ')
-                                {
-                                  sb.replace(i, i+1, "  ");
-                                  space=space-1;  
-                                }
-                              }
-                              else
-                              {
-                                if(line.charAt(i)==' ')
-                                {
-                                  sb.replace(i+1, i+1, "  ");
-                                  space=space-1;  
-                                }
-                              }
-                             
-                          }
-        }
-         return line;
+                         }
+                }
+                
+         return sb.toString();
     }
 }
